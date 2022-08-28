@@ -25,25 +25,27 @@
                 <option value="1">Todas as tarefas</option>
             </select>
         </div>
-        <div class="task-list">
-            <div class="task">
-                <div class="title">
-                    <input type="checkbox" />
-                    <h4>Titulo da Tarefa</h4>
-                </div>
-                <div class="priority">
-                    <div class="sphere"></div>
-                    <h6>Titulo da Tarefa</h6>
-                </div>
-                <div class="actions">
-                    <a href="#">
-                        <img src="/assets/images/icon-edit.png" alt="Editar" title="Editar">
-                    </a>
-                    <a href="#">
-                        <img src="/assets/images/icon-delete.png" alt="Excluir" title="Excluir">
-                    </a>
+        @foreach ($tasks as $task )
+            <div class="task-list">
+                <div class="task">
+                    <div class="title">
+                        <input type="checkbox" />
+                        <h4>{{$task->title}}</h4>
+                    </div>
+                    <div class="priority">
+                        <div class="sphere"></div>
+                        <h6>{{$task->description}}</h6>
+                    </div>
+                    <div class="actions">
+                        <a href="#">
+                            <img src="/assets/images/icon-edit.png" alt="Editar" title="Editar">
+                        </a>
+                        <a href="#">
+                            <img src="/assets/images/icon-delete.png" alt="Excluir" title="Excluir">
+                        </a>
+                    </div>
                 </div>
             </div>
-        </div>
+        @endforeach
     </section>
 </x-layout>
